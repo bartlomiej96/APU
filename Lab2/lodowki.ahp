@@ -1,0 +1,206 @@
+Version: 2.0
+
+#########################
+# Alternatives Section
+#
+
+Alternatives: &alternatives
+ # Here, we list all the alternatives, together with their attributes. 
+ # We can use these attributes later in the file when defining 
+ # preferenceFunctions. The attributes can be quantitative or 
+ # qualitative.
+ 
+  Xiaomi 11 Lite:
+    wyswietlacz: 6.55
+    ram: 6
+    dysk: 128
+    aparat: 64
+    cena: 1599
+    bateria: 4250
+    kolor: niebieski
+ 
+  Xiaomi 11T:
+    wyswietlacz: 6.67
+    ram: 8
+    dysk: 256
+    aparat: 108
+    cena: 2399
+    bateria: 5000
+    kolor: szary
+ 
+  Xiaomi Redmi 9A:
+    wyswietlacz: 6.53
+    ram: 2
+    dysk: 32
+    aparat: 13
+    cena: 499
+    bateria: 5000
+    kolor: niebieski
+ 
+  Xiaomi Redmi Note 10 Pro:
+    wyswietlacz: 6.67
+    ram: 6
+    dysk: 64
+    aparat: 108
+    cena: 1499
+    bateria: 5030
+    kolor: szary
+ 
+  Xiaomi Redmi Note 9:
+    wyswietlacz: 6.53
+    ram: 3
+    dysk: 64
+    aparat: 48
+    cena: 699
+    bateria: 5020
+    kolor: zielony
+ 
+  Xiaomi Mi 11 Lite:
+    wyswietlacz: 6.55
+    ram: 6
+    dysk: 128
+    aparat: 64
+    cena: 1599
+    bateria: 4250
+    kolor: szary
+ 
+  Xiaomi Redmi Note 10S:
+    wyswietlacz: 6.43
+    ram: 6
+    dysk: 64
+    aparat: 64
+    cena: 1249
+    bateria: 5000
+    kolor: szary
+ 
+  Xiaomi Redmi 10:
+    wyswietlacz: 6.5
+    ram: 4
+    dysk: 128
+    aparat: 50
+    cena: 899
+    bateria: 5000
+    kolor: niebieski
+ 
+  Xiaomi Mi 10T:
+    wyswietlacz: 6.67
+    ram: 8
+    dysk: 128
+    aparat: 64
+    cena: 1599
+    bateria: 5000
+    kolor: zielony
+ 
+  Xiaomi Redmi 9:
+    wyswietlacz: 6.53
+    ram: 3
+    dysk: 32
+    aparat: 13
+    cena: 649
+    bateria: 5020
+    kolor: zielony
+ 
+ 
+Goal:
+  name: Kup telefon
+  author: mtesluk
+  preferences:
+    # Zakladamy duzy budzet (zwracamy mala uwage na cene)
+    # Najwazniejsza jest wydajnosc, potem jakosc, cena i styl
+    pairwise:
+      - [Wydajnosc, Jakosc, 3]
+      - [Wydajnosc, Styl, 4]
+      - [Wydajnosc, Cena, 2]
+      - [Jakosc, Styl, 1]
+      - [Jakosc, Cena, 2]
+      - [Styl, Cena, 1/2]
+  children: 
+    Wydajnosc:
+      preferences:
+        # Polaczone pare wgl wewnetrznych kryteriow analizujac pamiec ram i pamiec danych
+        pairwise:
+          - [Xiaomi 11 Lite,Xiaomi 11T, 1/2]
+          - [Xiaomi 11 Lite,Xiaomi Redmi 9A, 3]
+          - [Xiaomi 11 Lite,Xiaomi Redmi Note 10 Pro, 2]
+          - [Xiaomi 11 Lite,Xiaomi Redmi Note 9, 3]
+          - [Xiaomi 11 Lite,Xiaomi Mi 11 Lite, 1]
+          - [Xiaomi 11 Lite,Xiaomi Redmi Note 10S, 2]
+          - [Xiaomi 11 Lite,Xiaomi Redmi 10, 2]
+          - [Xiaomi 11 Lite,Xiaomi Mi 10T, 1/2]
+          - [Xiaomi 11 Lite,Xiaomi Redmi 9, 3]
+          - [Xiaomi 11T,Xiaomi Redmi 9A, 4]
+          - [Xiaomi 11T,Xiaomi Redmi Note 10 Pro, 2.5]
+          - [Xiaomi 11T,Xiaomi Redmi Note 9, 3]
+          - [Xiaomi 11T,Xiaomi Mi 11 Lite, 2]
+          - [Xiaomi 11T,Xiaomi Redmi Note 10S, 2]
+          - [Xiaomi 11T,Xiaomi Redmi 10, 3]
+          - [Xiaomi 11T,Xiaomi Mi 10T, 1.5]
+          - [Xiaomi 11T,Xiaomi Redmi 9, 4]
+          - [Xiaomi Redmi 9A,Xiaomi Redmi Note 10 Pro, 1/3]
+          - [Xiaomi Redmi 9A,Xiaomi Redmi Note 9, 1/2]
+          - [Xiaomi Redmi 9A,Xiaomi Mi 11 Lite, 1/4]
+          - [Xiaomi Redmi 9A,Xiaomi Redmi Note 10S, 1/3]
+          - [Xiaomi Redmi 9A,Xiaomi Redmi 10, 1/4]
+          - [Xiaomi Redmi 9A,Xiaomi Mi 10T, 1/4]
+          - [Xiaomi Redmi 9A,Xiaomi Redmi 9, 1]
+          - [Xiaomi Redmi Note 10 Pro,Xiaomi Redmi Note 9, 1.5]
+          - [Xiaomi Redmi Note 10 Pro,Xiaomi Mi 11 Lite, 1/2]
+          - [Xiaomi Redmi Note 10 Pro,Xiaomi Redmi Note 10S, 1]
+          - [Xiaomi Redmi Note 10 Pro,Xiaomi Redmi 10, 1]
+          - [Xiaomi Redmi Note 10 Pro,Xiaomi Mi 10T, 1/3]
+          - [Xiaomi Redmi Note 10 Pro,Xiaomi Redmi 9, 2]
+          - [Xiaomi Redmi Note 9,Xiaomi Mi 11 Lite, 1/3]
+          - [Xiaomi Redmi Note 9,Xiaomi Redmi Note 10S, 1/2]
+          - [Xiaomi Redmi Note 9,Xiaomi Redmi 10, 1/3]
+          - [Xiaomi Redmi Note 9,Xiaomi Mi 10T, 1/4]
+          - [Xiaomi Redmi Note 9,Xiaomi Redmi 9, 1]
+          - [Xiaomi Mi 11 Lite,Xiaomi Redmi Note 10S, 2]
+          - [Xiaomi Mi 11 Lite,Xiaomi Redmi 10, 1/2]
+          - [Xiaomi Mi 11 Lite,Xiaomi Mi 10T, 1]
+          - [Xiaomi Mi 11 Lite,Xiaomi Redmi 9, 3]
+          - [Xiaomi Redmi Note 10S,Xiaomi Redmi 10, 1]
+          - [Xiaomi Redmi Note 10S,Xiaomi Mi 10T, 1/2]
+          - [Xiaomi Redmi Note 10S,Xiaomi Redmi 9, 2]
+          - [Xiaomi Redmi 10,Xiaomi Mi 10T, 1/2]
+          - [Xiaomi Redmi 10, Xiaomi Redmi 9, 2]
+          - [Xiaomi Mi 10T,Xiaomi Redmi 9, 3]
+      children: *alternatives 
+    Jakosc:
+      preferences:
+        pairwise:
+          - [Jakosc Zdjec, Jakosc Ekranu, 2]
+      children:
+        Jakosc Zdjec:
+          preferences: 
+            # Im lepszy aparat tym lepiej
+            pairwiseFunction:
+              function(a1, a2) min(9, max(1/9, a1$aparat/a2$aparat))
+          children: *alternatives
+        Jakosc Ekranu:
+          preferences:  
+            # Im wiekszy wyswietlacz tym lepiej
+            pairwiseFunction:
+              function(a1, a2) min(9, max(1/9, a1$wyswietlacz/a2$wyswietlacz))
+          children: *alternatives
+    Styl: 
+      preferences:
+        # Porownywane kolory, ktory w porownnaiu do innego jest lepszy
+        pairwiseFunction: >
+          ColorPreference <- function(a1, a2) {
+            if (a1$kolor == 'niebieski' & a2$kolor == 'zielony') return (1/4)
+            if (a1$kolor == 'niebieski' & a2$kolor == 'szary') return (1/5)
+            if (a1$kolor == 'szary' & a2$kolor == 'zielony') return (2)
+            if (a1$kolor == a2$kolor) return (1)
+            return (ColorPreference(a2, a1))
+          }
+      children: *alternatives
+    Cena:
+      preferences: 
+        # Im niższa cena tym lepiej
+        pairwiseFunction:
+          function(a1, a2) max(1/9, min(9, a2$cena/a1$cena))
+      children: *alternatives
+ 
+ #
+ # End of Goal Section
+ #

@@ -1,0 +1,18 @@
+setwd("C:/Git/APU/Lab2")
+
+install.packages("data.tree")
+install.packages("formattable")
+install.packages("DiagrammeR")
+install.packages("C:/Git/APU/Lab2/ahp_0.2.12.tar.gz", repos=NULL, type = "source")
+install.packages("readr")
+library(ahp)
+library(data.tree)
+library(formattable)
+library(DiagrammeR)
+library(readr)
+
+ahpFile <- system.file("extdata", "apu2.ahp", package="ahp")
+ahpData <- Load("apu2.ahp")
+Calculate(ahpData)
+Analyze(ahpData)
+AnalyzeTable(ahpData)
